@@ -42,7 +42,7 @@ public class AuthorInsert {
 			int count = pstmt.executeUpdate();
 
 		    // 4.결과처리
-			System.out.println(count + "건이 처리되었습니다.");
+			System.out.println(count + "건이 저장되었습니다(작가)");
 			
 			
 		} catch (ClassNotFoundException e) {

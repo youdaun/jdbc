@@ -1,5 +1,5 @@
-//Dao만들기, AuthorVo사용하기
-package com.javaex.ex03;
+//Dao만들기, AuthorVo사용하기, 공동변수빼기
+package com.javaex.ex04;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,6 +11,10 @@ import java.util.List;
 
 public class AuthorDao {
 
+	private String driver = "oracle.jdbc.driver.OracleDriver";
+	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String id = "webdb";
+	private String pw = "webdb";
 
 	public void authorInsert(AuthorVo authorVo) {
 		// 0. import java.sql.*;
@@ -19,12 +23,10 @@ public class AuthorDao {
 
 		try {
 			// 1. JDBC 드라이버 (Oracle) 로딩
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName(driver);
 
 			// 2. Connection 얻어오기
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
-			System.out.println("접속성공");
+			conn = DriverManager.getConnection(url, id, pw);
 
 			// 3. SQL문 준비 / 바인딩 / 실행
 
@@ -77,11 +79,10 @@ public class AuthorDao {
 
 		try {
 			// 1. JDBC 드라이버 (Oracle) 로딩
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName(driver);
 
 			// 2. Connection 얻어오기
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
+			conn = DriverManager.getConnection(url, id, pw);
 
 			// 3. SQL문 준비 / 바인딩 / 실행
 			// 문자열 만들기
@@ -132,11 +133,10 @@ public class AuthorDao {
 
 		try {
 			// 1. JDBC 드라이버 (Oracle) 로딩
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName(driver);
 
 			// 2. Connection 얻어오기
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
+			conn = DriverManager.getConnection(url, id, pw);
 
 			// 3. SQL문 준비 / 바인딩 / 실행
 			// 문자열 만들기
@@ -194,11 +194,10 @@ public class AuthorDao {
 
 		try {
 			// 1. JDBC 드라이버 (Oracle) 로딩
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
+			Class.forName(driver);
+
 			// 2. Connection 얻어오기
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			conn = DriverManager.getConnection(url, "webdb", "webdb");
+			conn = DriverManager.getConnection(url, id, pw);
 			
 			// 3. SQL문 준비 / 바인딩 / 실행
 			String query = "";

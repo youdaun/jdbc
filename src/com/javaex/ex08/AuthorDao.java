@@ -1,5 +1,5 @@
 //Dao만들기, AuthorVo사용하기, 공동변수빼기
-package com.javaex.ex04;
+package com.javaex.ex08;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
